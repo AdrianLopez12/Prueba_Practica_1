@@ -7,6 +7,8 @@ public class PantallaInicio extends javax.swing.JFrame {
     ControladorMatrimonio controladorMatrimonio;
     
     PantallaRegistrarPersona pantallaRegistrarPersona;
+    PantallaDatosNovios pantallaDatosNovios;
+    PantallaDivorcio pantallaDivorcio;
     
     public PantallaInicio() {
         initComponents();
@@ -16,8 +18,8 @@ public class PantallaInicio extends javax.swing.JFrame {
         
         
         pantallaRegistrarPersona =new PantallaRegistrarPersona(controladorPersona);
-        
-        
+        pantallaDatosNovios=new PantallaDatosNovios(controladorMatrimonio, controladorPersona);
+        pantallaDivorcio=new PantallaDivorcio(controladorMatrimonio, controladorPersona);
         
         
     }
@@ -30,7 +32,6 @@ public class PantallaInicio extends javax.swing.JFrame {
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
         saveMenuItem = new javax.swing.JMenuItem();
-        saveAsMenuItem = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         cutMenuItem = new javax.swing.JMenuItem();
         copyMenuItem = new javax.swing.JMenuItem();
@@ -54,10 +55,6 @@ public class PantallaInicio extends javax.swing.JFrame {
         saveMenuItem.setText("Listar");
         fileMenu.add(saveMenuItem);
 
-        saveAsMenuItem.setMnemonic('a');
-        saveAsMenuItem.setText("Editar");
-        fileMenu.add(saveAsMenuItem);
-
         menuBar.add(fileMenu);
 
         editMenu.setMnemonic('e');
@@ -65,6 +62,11 @@ public class PantallaInicio extends javax.swing.JFrame {
 
         cutMenuItem.setMnemonic('t');
         cutMenuItem.setText("Casarse");
+        cutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cutMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(cutMenuItem);
 
         copyMenuItem.setMnemonic('y');
@@ -73,6 +75,11 @@ public class PantallaInicio extends javax.swing.JFrame {
 
         pasteMenuItem.setMnemonic('p');
         pasteMenuItem.setText("Anular Matrimonios");
+        pasteMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pasteMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(pasteMenuItem);
 
         menuBar.add(editMenu);
@@ -98,6 +105,21 @@ public class PantallaInicio extends javax.swing.JFrame {
         pantallaRegistrarPersona.setVisible(true);
         
     }//GEN-LAST:event_openMenuItemActionPerformed
+
+    private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
+        desktopPane.add(pantallaDatosNovios);
+        pantallaDatosNovios.setVisible(true);
+        
+        
+        
+    }//GEN-LAST:event_cutMenuItemActionPerformed
+
+    private void pasteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pasteMenuItemActionPerformed
+        desktopPane.add(pantallaDivorcio);
+        pantallaDivorcio.setVisible(true);
+        
+        
+    }//GEN-LAST:event_pasteMenuItemActionPerformed
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -139,7 +161,6 @@ public class PantallaInicio extends javax.swing.JFrame {
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
-    private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
 

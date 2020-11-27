@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ups.edu.ec.stados;
+import ups.edu.ec.interfaces.EstadoPersona;
+import ups.edu.ec.modelo.Persona;
+public class Casado implements EstadoPersona{
 
-/**
- *
- * @author Casa
- */
-public class Casado {
+    @Override
+    public String Estadop(Persona persona) {
+        return "Casado";
+    }
+
+   
     
 }

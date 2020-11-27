@@ -5,5 +5,5 @@ import ups.edu.ec.modelo.Persona;
 
 
 public interface EstadoPersona {
-    public void atiende(Persona persona);
+    public String Estadop(Persona persona);
 }

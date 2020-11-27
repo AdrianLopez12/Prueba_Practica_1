@@ -1,6 +1,10 @@
 package ups.edu.ec.modelo;
 
 import java.util.Objects;
+import ups.edu.ec.interfaces.EstadoPersona;
+import ups.edu.ec.stados.Casado;
+import ups.edu.ec.stados.Divorciado;
+import ups.edu.ec.stados.Soltero;
 
 public class Persona {
     private String nombre;
@@ -10,7 +14,7 @@ public class Persona {
     private String genero;
     private String fechaNaci;
     private String cargo;
-
+    private EstadoPersona estadoPersona;
   
 
     public Persona(String nombre, String apellido, String cedula, String direccionPer, String genero, String fechaNaci, String cargo) {
@@ -21,12 +25,23 @@ public class Persona {
         this.genero = genero;
         this.fechaNaci = fechaNaci;
         this.cargo = cargo;
+        estadoPersona=new Soltero();
     }
     
 
     public Persona() {
     }
 
+    public void casado(){
+        estadoPersona=new Casado();
+    }
+    public void divorciado(){
+        estadoPersona=new Divorciado();
+    }
+    public void Soltero(){
+        estadoPersona=new Soltero();
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -110,8 +125,10 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula + ", direccionPer=" + direccionPer + ", genero=" + genero + ", fechaNaci=" + fechaNaci + ", cargo=" + cargo + '}';
+        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula + ", direccionPer=" + direccionPer + ", genero=" + genero + ", fechaNaci=" + fechaNaci + ", cargo=" + cargo + ", estadoPersona=" + estadoPersona.Estadop(this) + '}';
     }
+
+    
     
     
     

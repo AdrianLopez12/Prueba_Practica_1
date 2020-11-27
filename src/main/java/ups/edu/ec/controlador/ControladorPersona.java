@@ -1,14 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ups.edu.ec.controlador;
+import java.util.List;
+import ups.edu.ec.generica.AbstractControler;
+import ups.edu.ec.modelo.*;
+public class ControladorPersona extends AbstractControler<Persona>{
 
-/**
- *
- * @author Casa
- */
-public class ControladorPersona {
+    @Override
+    public boolean validarObjeto(Persona E) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public Persona validarCedula(String cedula){
+        List<Persona>p=getLista();
+        
+        for (int i = 0; i < p.size(); i++) {
+            if(p.get(i).getCedula().equalsIgnoreCase(cedula)){
+                return p.get(i);
+                
+            }
+        }
+        return null;
+    }
     
 }

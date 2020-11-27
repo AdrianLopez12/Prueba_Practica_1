@@ -11,14 +11,18 @@ public class Persona {
     private String fechaNaci;
     private String cargo;
 
-    public Persona(String nombre, String apellido, String cedula, String direccionPer, String genero, String fechaNaci) {
+  
+
+    public Persona(String nombre, String apellido, String cedula, String direccionPer, String genero, String fechaNaci, String cargo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
         this.direccionPer = direccionPer;
         this.genero = genero;
         this.fechaNaci = fechaNaci;
+        this.cargo = cargo;
     }
+    
 
     public Persona() {
     }

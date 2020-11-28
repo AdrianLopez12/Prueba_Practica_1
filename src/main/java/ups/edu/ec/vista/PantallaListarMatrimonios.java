@@ -17,6 +17,8 @@ public class PantallaListarMatrimonios extends javax.swing.JInternalFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
 
+        setClosable(true);
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Listar Matrimonios");
 

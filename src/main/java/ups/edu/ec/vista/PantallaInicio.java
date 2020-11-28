@@ -9,6 +9,8 @@ public class PantallaInicio extends javax.swing.JFrame {
     PantallaRegistrarPersona pantallaRegistrarPersona;
     PantallaDatosNovios pantallaDatosNovios;
     PantallaDivorcio pantallaDivorcio;
+    PantallaListarPersonas pantallaListarPersonas;
+    PantallaListarMatrimonios pantallaListarMatrimonios;
     
     public PantallaInicio() {
         initComponents();
@@ -20,6 +22,8 @@ public class PantallaInicio extends javax.swing.JFrame {
         pantallaRegistrarPersona =new PantallaRegistrarPersona(controladorPersona);
         pantallaDatosNovios=new PantallaDatosNovios(controladorMatrimonio, controladorPersona);
         pantallaDivorcio=new PantallaDivorcio(controladorMatrimonio, controladorPersona);
+        pantallaListarPersonas=new PantallaListarPersonas(controladorPersona);
+        pantallaListarMatrimonios =new PantallaListarMatrimonios(controladorMatrimonio);
         
         
     }
@@ -53,6 +57,11 @@ public class PantallaInicio extends javax.swing.JFrame {
 
         saveMenuItem.setMnemonic('s');
         saveMenuItem.setText("Listar");
+        saveMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveMenuItemActionPerformed(evt);
+            }
+        });
         fileMenu.add(saveMenuItem);
 
         menuBar.add(fileMenu);
@@ -71,6 +80,11 @@ public class PantallaInicio extends javax.swing.JFrame {
 
         copyMenuItem.setMnemonic('y');
         copyMenuItem.setText("Listar Matrimonios");
+        copyMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                copyMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(copyMenuItem);
 
         pasteMenuItem.setMnemonic('p');
@@ -120,6 +134,18 @@ public class PantallaInicio extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_pasteMenuItemActionPerformed
+
+    private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
+        desktopPane.add(pantallaListarPersonas);
+        pantallaListarPersonas.setVisible(true);
+        
+        
+    }//GEN-LAST:event_saveMenuItemActionPerformed
+
+    private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
+        desktopPane.add(pantallaListarMatrimonios);
+        pantallaListarMatrimonios.setVisible(true);
+    }//GEN-LAST:event_copyMenuItemActionPerformed
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

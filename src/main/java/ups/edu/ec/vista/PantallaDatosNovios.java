@@ -13,10 +13,17 @@ public class PantallaDatosNovios extends javax.swing.JInternalFrame {
         Persona juez;
     public PantallaDatosNovios(ControladorMatrimonio controladorMatrimonio, ControladorPersona controladorPersona) {
         initComponents();
-        
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
+        jTextField6.setText("");
+        jTextField7.setText("");
         jTextField6.setEnabled(false);
         jTextField7.setEnabled(false);
         jButton2.setEnabled(false);
+        
         
         this.controladorMatrimonio= controladorMatrimonio;
         this.controladorPersona=controladorPersona;
@@ -179,10 +186,10 @@ public class PantallaDatosNovios extends javax.swing.JInternalFrame {
         
        Persona p= controladorPersona.validarCedula(cedPar1);
        
-        if(p!=null){
+        if(p!=null&&p.getEstadoPersona().Estadop(p).equalsIgnoreCase("soltero")){
             Casante1=p;
              p= controladorPersona.validarCedula(cedPar2);
-            if(p!=null){
+            if(p!=null&&p.getEstadoPersona().Estadop(p).equalsIgnoreCase("soltero")){
                 Casante2=p;
                 p= controladorPersona.validarCedula(CedTes1);
                 if(p!=null){
@@ -242,6 +249,24 @@ public class PantallaDatosNovios extends javax.swing.JInternalFrame {
     
     
         JOptionPane.showMessageDialog(this, Casante1.getNombre()+" se caso con "+Casante2.getNombre());
+                           jTextField1.setEnabled(true);
+                           jTextField2.setEnabled(true);
+                           jTextField3.setEnabled(true);
+                           jTextField4.setEnabled(true);
+                           jTextField5.setEnabled(true);
+                           jButton1.setEnabled(true);
+                           jTextField6.setEnabled(false);
+                           jTextField7.setEnabled(false);
+                           jButton2.setEnabled(false);
+    
+    
+                           jTextField1.setText("");
+                           jTextField2.setText("");
+                           jTextField3.setText("");
+                           jTextField4.setText("");
+                           jTextField5.setText("");
+                           jTextField6.setText("");
+                           jTextField7.setText("");
     }
     
     

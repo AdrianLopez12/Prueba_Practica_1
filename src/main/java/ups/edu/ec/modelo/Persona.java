@@ -105,6 +105,14 @@ public class Persona {
         return hash;
     }
 
+    public EstadoPersona getEstadoPersona() {
+        return estadoPersona;
+    }
+
+    public void setEstadoPersona(EstadoPersona estadoPersona) {
+        this.estadoPersona = estadoPersona;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -125,7 +133,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula + ", direccionPer=" + direccionPer + ", genero=" + genero + ", fechaNaci=" + fechaNaci + ", cargo=" + cargo + ", estadoPersona=" + estadoPersona.Estadop(this) + '}';
+        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula + ", direccionPer=" + direccionPer + ", genero=" + genero + ", fechaNaci=" + fechaNaci + ", cargo=" + cargo + ", estadoPersona=" + estadoPersona.Estadop(this) + '}'+"\n\n";
     }
 
     

@@ -23,6 +23,8 @@ ControladorPersona controladorPersona;
         jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
+        setClosable(true);
+
         jLabel1.setText("Cedula Divorciado 1");
 
         jLabel2.setText("Cedula Divorciado 2");
@@ -93,6 +95,8 @@ ControladorPersona controladorPersona;
             System.out.println(controladorPersona.getLista().get(1));
             System.out.println(controladorPersona.getLista().get(2));
             System.out.println(controladorPersona.getLista().get(3));
+        }else{
+            JOptionPane.showMessageDialog(this, "Cedulas invalidas");
         }
         
         
